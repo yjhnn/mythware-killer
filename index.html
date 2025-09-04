@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f9f9f9 0%, #eeeeee 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -34,13 +34,14 @@
         }
         
         h1 {
-            color: #2c3e50;
+            color: #d32f2f;
             margin-bottom: 20px;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         p {
-            color: #7f8c8d;
+            color: #757575;
             margin-bottom: 30px;
             font-size: 1.1rem;
             line-height: 1.6;
@@ -55,7 +56,7 @@
         }
         
         .link {
-            padding: 15px 30px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -64,27 +65,40 @@
             display: inline-block;
             min-width: 150px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, #d32f2f, #b71c1c);
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         
-        .link-1 {
-            background: linear-gradient(to right, #FF416C, #FF4B2B);
-            color: white;
-        }
-        
-        .link-2 {
-            background: linear-gradient(to right, #3498db, #2980b9);
-            color: white;
-        }
-        
-        .link-3 {
-            background: linear-gradient(to right, #38ef7d, #11998e);
-            color: white;
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #f44336, #d32f2f);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
         }
         
         .link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .link:hover::before {
+            opacity: 1;
+        }
+        
+        .link span {
+            position: relative;
+            z-index: 2;
         }
         
         .link:active {
@@ -92,17 +106,18 @@
         }
         
         .note {
-            background: #f8f9fa;
+            background: #ffebee;
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
             font-size: 0.9rem;
             text-align: left;
+            border-left: 4px solid #d32f2f;
         }
         
         .note h3 {
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: #d32f2f;
         }
         
         .note ul {
@@ -111,7 +126,7 @@
         
         .note li {
             margin-bottom: 8px;
-            color: #7f8c8d;
+            color: #757575;
         }
         
         @media (max-width: 600px) {
@@ -136,7 +151,7 @@
             <a href="https://yejunhong.lanzoul.com/ixT5135a8u9g" class="link link-1">antimythware.bat(密码=8z1f)</a>
             <a href="https://yejunhong.lanzoul.com/ieYzB35a8uah" class="link link-2">mythwarehelper</a>
             <a href="https://yejunhong.lanzoul.com/iiIWF35a8ucj" class="link link-3">mythwaretools</a>
-            <a href="https://yejunhong.lanzoul.com/iJMZL35a8uda" class="link link-3">极域密码.txt</a>
+            <a href="https://yejunhong.lanzoul.com/iJMZL35a8uda" class="link link-4">极域密码.txt</a>
         </div>
         
         <div class="note">
@@ -146,7 +161,6 @@
                 <li>mythwarehelper：极域工具包1</li>
                 <li>mythwaretool：极域工具包2</li>
                 <li>极域密码.txt：万能密码</li>
-                <li></li>
             </ul>
         </div>
     </div>
